@@ -1,16 +1,16 @@
+import React, { Fragment } from "react";
+import Parragraf from "./Parragraf";
 
-import React, {Fragment} from "react"
+const Scene = ({ phrases }) => {
+  return (
+    <Fragment>
+      {phrases.map((item) => (
+        <Parragraf>{item.quote} </Parragraf>
+      ))}
+    </Fragment>
+  );
+};
+// utilizamos un map para recorrer el array y agarrar lo que necesitamos.
+// el formato se lo damos dentro del map para que devuelva las frases separadas.
 
-const Scene = ({phrases}) => {
-    return (
-        <Fragment>
-            <p>{phrases.quote1} </p>
-            <p>{phrases.quote2} </p>
-            <p>{phrases.quote3} </p>
-            <p>{phrases.quote4} </p>
-        </Fragment>
-    )
-}
-
-
-export default Scene
+export default Scene;
