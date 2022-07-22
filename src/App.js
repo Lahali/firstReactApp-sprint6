@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Scene from "./components/scene/Scene";
 import "./App.css";
+import Action from "./components/scene/Action";
 
 function App() {
   const phrases = [
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <Fragment>
+      <Action></Action>
       <Scene phrases={phrases} />
     </Fragment>
   );
