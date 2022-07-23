@@ -5,9 +5,12 @@ const Button = styled.button`
   border: solid #73777b;
   width: 50%;
   padding: 2rem;
-  /* &:hover: #73777B */
   text-align: center;
   font-size: 20px;
+  &:hover {
+    background-color: #73777b;
+    color: #cfd2cf;
+  }
 `;
 
 export default Button;

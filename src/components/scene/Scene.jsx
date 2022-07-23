@@ -5,7 +5,7 @@ const Scene = ({ phrases }) => {
   return (
     <Fragment>
       {phrases.map((item) => (
-        <Parragraf>{item.quote} </Parragraf>
+        <Parragraf key={item.id}>{item.quote}</Parragraf>
       ))}
     </Fragment>
   );
