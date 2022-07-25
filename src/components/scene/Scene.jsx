@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
 import Parragraf from "./Parragraf";
+import Phrases from "./Phrases";
 
-const Scene = ({ phrases }) => {
+
+// el counter pasa de app a escena
+const Scene = () => {
   return (
     <Fragment>
-      {phrases.map((item) => (
+      {Phrases.map((item) => (
         <Parragraf key={item.id}>{item.quote}</Parragraf>
       ))}
     </Fragment>

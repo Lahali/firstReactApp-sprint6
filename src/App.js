@@ -1,35 +1,37 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Scene from "./components/scene/Scene";
 import "./App.css";
 import Action from "./components/scene/Action";
+import Phrases from "./components/scene/Phrases";
 
 function App() {
-  const phrases = [
-    {
-      id: 1,
-      quote:
-        "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial",
-    },
-    {
-      id: 2,
-      quote:
-        "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.",
-    },
-    {
-      id: 3,
-      quote: "L'heroi va decidir travessar la porta que el portava a casa",
-    },
-    {
-      id: 4,
-      quote:
-        "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ...",
-    },
-  ];
+  
+//poner aquí las funciones next y previous. Aquí iría toda la funcionalidad
+
+
+const [counter, setCounter] = useState(1)
+
+  useEffect(()=>{
+    console.log(counter, "cambio")
+  },[counter]);
+
+  const next = () => {
+    setCounter(prevCounter => prevCounter + 1)
+  // {phrases.find((item)=> item.id === counter)}
+
+   };
+
+  const previous = () => {
+    setCounter(prevCounter => prevCounter  -1)
+  }
 
   return (
     <Fragment>
-      <Action></Action>
-      <Scene phrases={phrases} />
+      <Action 
+        next={next}
+        previous={previous}
+      /> {/* //así estamos pasando las accciones por props */}
+      <Scene Phrases={Phrases} />  {/* // aquí hay q pasar el counter a escena */}
     </Fragment>
   );
 }

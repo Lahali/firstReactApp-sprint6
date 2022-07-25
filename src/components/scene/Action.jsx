@@ -1,30 +1,21 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import Button from "./Button";
-import ParragrafSelected from "./ParragrafSelected";
 
-const Action = ({ phrases }) => {
+const Action = ({next, previous}) => {
 
-  //Mi idea es poner un contador para recorrer el array
-  const [counter, setCounter] = useState(0)
+  //le llegan las funciones por props, no hay funciones en este componente
 
-  const next = ({phrases}) => {
-    setCounter(counter + 1)
-    console.log(counter, "next")
-    {phrases.map((item, index) => {
-      <ParragrafSelected key={index}>{item[counter].quote}</ParragrafSelected>
-    })}
-  };
-
-  // const previous = () => {
-  //   setCounter(counter - 1)
-  //   console.log(counter, "previous")
-  //}
+  //Mi idea es poner un contador para recorrer el array y seleccionar el id correspondiente
+  
 
   return (
-    <Fragment>
-      <Button >Anterior</Button>
+    <>
+    {/* esto es el hijo y recibe del padre el onclick por props  */}
+      <Button onClick={previous}>Anterior</Button>
       <Button onClick={next}>Següent</Button>
-    </Fragment>
+      {/* Counter: {counter} */}
+
+    </>
   );
 };
 
