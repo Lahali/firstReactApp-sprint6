@@ -1,4 +1,3 @@
-
 import styled from "styled-components"; 
 
 const Parragraf = styled.p`
@@ -9,13 +8,17 @@ text-align: center;
 margin: 2rem;
 border-radius: 2rem;
 
-/* para cambiar el color no hace falta una clase diferente, se hace con la pseudoclase active */
-&:active {
-border: solid  #FF8C8C;
+${props => props.active === true ? 'background-color: #FF8C8C' : " "}
+
+
+
+/* para cambiar el color no hace falta una clase diferente, se puede activar una pseudoclase */
+/* &::selection {
+border: solid  #FF8C8C; */
 /* #FF5D5D; color alternativo*/
-background-color: #FF8C8C;
-color: #4C3A51;
-}
+/* background-color: #FF8C8C;
+color: #4C3A51; */
+/* } */
 `
 
 export default Parragraf

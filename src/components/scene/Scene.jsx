@@ -4,11 +4,12 @@ import Phrases from "./Phrases";
 
 
 // el counter pasa de app a escena
-const Scene = () => {
+const Scene = ({counter}) => {
+
   return (
     <Fragment>
       {Phrases.map((item) => (
-        <Parragraf key={item.id}>{item.quote}</Parragraf>
+        <Parragraf  key={item.id} active={item.id === counter ? true : false}>{item.quote}</Parragraf>
       ))}
     </Fragment>
   );
