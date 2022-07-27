@@ -4,12 +4,16 @@ import "./App.css";
 import Action from "./components/scene/Action";
 import Phrases from "./components/scene/Phrases";
 
+
 function App() {
   //poner aquí las funciones next y previous. Aquí iría toda la funcionalidad
 
   const [counter, setCounter] = useState(0);
+
+  //ponemos así el useState porque es un array de objetos. Lo empezamos vacío para que recoja la info del useEffect
   const [selectedPhrase, setSelectedPhrase] = useState({})
 
+  // hacemos un counter para luego buscar el elemento por id
   useEffect(() => {
     console.log(counter, "cambio");
   }, [counter]);
@@ -20,7 +24,7 @@ function App() {
   };
 
   const previous = () => {
-    if (counter <= 0) return setCounter(0);
+    if (counter <= 0) return setCounter(4);
     setCounter((prevCounter) => prevCounter - 1);
   };
 
