@@ -1,3 +1,4 @@
+import { uno } from "../img/1.jpg";
 
 const Phrases = [
     {

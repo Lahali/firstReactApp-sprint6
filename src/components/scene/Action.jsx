@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import { Button } from "./Buttons";
 
 const Action = ({next, previous}) => {
 
